@@ -1,0 +1,19 @@
+.About-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.About-card{
+    display:flex;
+    max-width: 100%;
+    margin-top: 15px;
+    overflow-x:clip;
+}
+
+.Slide-arrow{
+    width: 150px;
+    justify-content: space-between;
+}

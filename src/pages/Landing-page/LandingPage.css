@@ -1,0 +1,8 @@
+.Container{
+    width: 100%;
+    background-image: url('../../../public/img/food_wallpaper.jpg');
+    background-size:contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}

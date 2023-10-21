@@ -1,20 +1,17 @@
-// src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-const db = require('./config/db'); // Import the database configuration
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-
-// Import and use middleware from src/config/middleware.js
-
-// Import and use routes here
-app.use(express.json()); // Middleware for JSON parsing
-app.use('/api/users', require('./api/users/user.routes'));
-
-
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
