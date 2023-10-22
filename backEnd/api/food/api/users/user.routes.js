@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('./user.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {sendPasswordResetEmail} = require('../../utils/email.handler');
+const {sendPasswordResetEmail} = require('../../../../../src/utils/email.handler');
 require('dotenv').config();
 
 // Register a new user

@@ -39,6 +39,7 @@ export default function Login() {
                   type="email"
                   value={email}
                   autoComplete="email"
+                  placeholder='Email'
                   required
                   onChange={(e) => setEmail(e.target.value)}
                   className="block w-full p-3 px-10 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6"
@@ -65,6 +66,7 @@ export default function Login() {
                         type={Visible ? 'text' : 'password'}
                         value={Password}
                         autoComplete="current-password"
+                        placeholder='Password'
                         required
                         onChange={(e) => setPassword(e.target.value)}
                         className="block px-10 p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-md sm:leading-6"

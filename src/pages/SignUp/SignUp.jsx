@@ -48,6 +48,7 @@ export default function SignUp() {
                   type='text'
                   value={name}
                   autoComplete='name'
+                  placeholder='Username'
                   required
                   onChange={(e) => setName(e.target.value)}
                   className='block w-full p-3 px-10 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6'
@@ -66,6 +67,7 @@ export default function SignUp() {
                   type='email'
                   value={email}
                   autoComplete='email'
+                  placeholder='Email'
                   required
                   onChange={(e) => setEmail(e.target.value)}
                   className='block w-full p-3 px-10 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-sm sm:leading-6'
@@ -84,6 +86,7 @@ export default function SignUp() {
                   type={visible ? 'text' : 'password'}
                   value={password}
                   autoComplete='new-password'
+                  placeholder='Password'
                   required
                   onChange={(e) => setPassword(e.target.value)}
                   className='block px-10 p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-md sm:leading-6'
@@ -109,6 +112,7 @@ export default function SignUp() {
                   type={visible ? 'text' : 'password'}
                   value={repeatPassword}
                   autoComplete='new-password'
+                  placeholder='Password'
                   required
                   onChange={(e) => setRepeatPassword(e.target.value)}
                   className='block px-10 p-3 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-300 sm:text-md sm:leading-6'
