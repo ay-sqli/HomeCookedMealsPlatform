@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const DB = "mongodb+srv://Ayoub:Ayoub1234567890@cluster0.38l1bkt.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
+const DB = process.env.DB_URL;
 
 const connectDataBase = () => {
     mongoose.connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })

@@ -16,7 +16,7 @@ connectDataBase();
 
 // Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "./config/.env" });
+  require("dotenv").config({ path: "backEnd/config/.env" });
 }
 
 // Create server
