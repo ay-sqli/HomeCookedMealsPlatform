@@ -1,38 +1,43 @@
 const app = require("./app");
-const connectDataBase = require("./db/Database");
+const connectDatabase = require("./db/Database");
+const cloudinary = require("cloudinary");
 
-const port = process.env.PORT || 3000;
-
-// Handling uncaught exception
+// Handling uncaught Exception
 process.on("uncaughtException", (err) => {
-  console.log(`[${new Date().toUTCString()}] Error: ${err.message}`);
-  console.log(`[${new Date().toUTCString()}] Shutting down the server for handling uncaught exception`);
-  process.exit(1);
+  console.log(`Error: ${err.message}`);
+  console.log(`shutting down the server for handling uncaught exception`);
 });
 
-// connect db
-
-connectDataBase();
-
-// Config
+// config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "backEnd/config/.env" });
+  require("dotenv").config({
+    path: "config/.env",
+  });
 }
 
-// Create server
-const server = app.listen(port, () =>
-  console.log(
-    `[${new Date().toUTCString()}] The server is up and running on http://localhost:${port}`
-  )
-);
+// connect db
+connectDatabase();
 
-// Unhandled promise rejection
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+
+// create server
+const server = app.listen(process.env.PORT, () => {
+  console.log(
+    `Server is running on http://localhost:${process.env.PORT}`
+  );
+});
+
+// unhandled promise rejection
 process.on("unhandledRejection", (err) => {
-  console.log(`[${new Date().toUTCString()}] Unhandled Rejection: ${err.message}`);
-  console.log(err.stack);
-  console.log(`[${new Date().toUTCString()}] Shutting down the server for unhandled Rejection`);
+  console.log(`Shutting down the server for ${err.message}`);
+  console.log(`shutting down the server for unhandle promise rejection`);
 
   server.close(() => {
-    process.exit(2); // Use a different exit code for unhandled promise rejections
+    process.exit(1);
   });
 });
